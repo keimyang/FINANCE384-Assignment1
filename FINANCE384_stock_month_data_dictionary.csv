@@ -1,0 +1,28 @@
+variable,description,role
+date,End of month t (CRSP month-end trading date),identifier; not a predictor
+permno,CRSP permanent security identifier,identifier; not a predictor
+ticker,Exchange ticker at month t,identifier; not a predictor
+comnam,Company name at month t,identifier; not a predictor
+industry,Coarse SIC division label (Agriculture collapsed into Manufacturing),"classification, known at t; permitted as a predictor if encoded"
+ff49_code,Fama-French 49-industry code (Ships collapsed into Aero; Agric into Chems),"classification, known at t; permitted as a predictor if encoded"
+ff49_name,Fama-French 49-industry name (Ships collapsed into Aero; Agric into Chems),"classification, known at t; permitted as a predictor if encoded"
+gvkey,Compustat firm identifier (missing if no CCM link),identifier; not a predictor
+size,log market capitalization (USD) at end of month t; winsorized at 1/99% within month,"characteristic, contemporaneous with t"
+bm,Book equity (6-month availability lag) / market cap at t; winsorized at 1/99% within month,"characteristic, contemporaneous with t"
+mom12_2,"Cumulative return months t-11..t-1, skipping month t; winsorized at 1/99% within month","characteristic, predetermined at t-1"
+vol12,12-month rolling return volatility through month t; winsorized at 1/99% within month,"characteristic, contemporaneous with t"
+beta60,Rolling 60-month market beta through t (min 24 months); winsorized at 1/99% within month,"characteristic, contemporaneous with t"
+ivol60,Rolling 60-month idiosyncratic volatility through t; winsorized at 1/99% within month,"characteristic, contemporaneous with t"
+turnover,Month-t share volume / shares outstanding; winsorized at 1/99% within month,"characteristic, contemporaneous with t"
+dollar_volume,Month-t dollar trading volume (USD); winsorized at 1/99% within month,"characteristic, contemporaneous with t"
+amihud_illiq,Month-t Amihud-style proxy: 1e6 * |ret| / dollar volume; winsorized at 1/99% within month,"characteristic, contemporaneous with t"
+divyield,Trailing 12-month dividends through t / month-t price; winsorized at 1/99% within month,"characteristic, contemporaneous with t"
+gross_profit,"(Revenue - COGS) / assets, 6-month availability lag; winsorized at 1/99% within month","characteristic, predetermined at t-1"
+roe,Income before extraordinary items / lagged book equity; winsorized at 1/99% within month,"characteristic, predetermined at t-1"
+asset_growth,Annual growth in total assets; winsorized at 1/99% within month,"characteristic, predetermined at t-1"
+leverage,(Long-term + current debt) / assets; winsorized at 1/99% within month,"characteristic, predetermined at t-1"
+accruals,(Income - operating cash flow) / assets; missing pre-1987; winsorized at 1/99% within month,"characteristic, predetermined at t-1"
+mkt_12m,Trailing 12-month market excess return through t (all stocks share),"characteristic, contemporaneous with t"
+mkt_vol_12m,Trailing 12-month market volatility through t,"characteristic, contemporaneous with t"
+down_market,1 if trailing 12-month market excess return through t < 0,"characteristic, contemporaneous with t"
+ret_excess_t,Month-t delisting-adjusted return in excess of the risk-free rate,"outcome, realised in month t"
